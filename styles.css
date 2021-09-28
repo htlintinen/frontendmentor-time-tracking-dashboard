@@ -170,3 +170,76 @@ body {
   --background-color: hsl(43, 84%, 65%);
   --background-url: url("images/icon-self-care.svg");
 }
+
+@media (min-width: 600px) {
+  .container {
+    max-width: 295px;
+  }
+
+  .card {
+    max-width: 250px;
+    text-align: unset;
+    padding-bottom: 30px;
+  }
+
+  .card-user-img {
+    width: 75px;
+  }
+
+  .card-user-container {
+    flex-direction: column;
+    padding: 35px 30px 80px 30px;
+  }
+
+  .card-user-texts {
+    align-self: flex-start;
+    margin-top: 40px;
+  }
+
+  .card-user-report {
+    font-size: 1rem;
+  }
+
+  .card-user-name {
+    font-size: 2.5rem;
+  }
+
+  .time-container {
+    flex-direction: column;
+    margin-left: 30px;
+    row-gap: 1.2rem;
+  }
+
+  .activity {
+    padding-top: 45px;
+    max-width: 250px;
+    margin: 25px;
+  }
+
+  .activity-data {
+    padding: 30px;
+  }
+
+  .data-row {
+    padding-top: unset;
+    padding-bottom: 10px;
+  }
+
+  .data-row.duration {
+    flex-direction: column;
+    align-self: flex-start;
+    padding-top: 15px;
+    padding-bottom: unset;
+  }
+
+  .activity-duration {
+    align-self: flex-start;
+    font-size: 3.5rem;
+  }
+
+  .activity-prev-duration {
+    font-size: 0.8rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
