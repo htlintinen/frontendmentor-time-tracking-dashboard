@@ -9,20 +9,23 @@
 
 body {
   background-color: var(--very-dark-blue);
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-  max-width: 375px;
   padding: 20px;
   margin: 20px auto;
 }
 
 .card {
+  max-width: 335px;
+  min-width: 335px;
   border-radius: 15px;
   background-color: var(--dark-blue);
-  margin: 25px;
   padding-bottom: 25px;
   text-align: center;
+  margin: 15px;
 }
 
 .card-user-container {
@@ -84,18 +87,22 @@ body {
   font-size: larger;
 }
 
+.activity-container {
+  display: grid;
+}
+
 .activity {
   display: flex;
-  flex: 1;
-  flex-grow: 1;
   border-radius: 15px;
+  max-width: 335px;
+  min-width: 335px;
   background-color: var(--background-color);
   background-image: var(--background-url);
   background-repeat: no-repeat;
   /*background-position: 93% -5%;*/
   background-position: top -5px right 15px;
   padding-top: 40px;
-  margin: 20px;
+  margin: 15px;
 }
 
 .activity-data {
@@ -157,13 +164,13 @@ body {
 }
 
 .exercise {
-  --background-color: hsl(264, 64%, 52%);
-  --background-url: url("images/icon-social.svg");
+  --background-color: hsl(145, 58%, 55%);
+  --background-url: url("images/icon-exercise.svg");
 }
 
 .social {
-  --background-color: hsl(145, 58%, 55%);
-  --background-url: url("images/icon-exercise.svg");
+  --background-color: hsl(264, 64%, 52%);
+  --background-url: url("images/icon-social.svg");
 }
 
 .selfcare {
@@ -171,13 +178,15 @@ body {
   --background-url: url("images/icon-self-care.svg");
 }
 
-@media (min-width: 600px) {
+@media only screen and (min-width: 600px) {
   .container {
-    max-width: 295px;
+    display: flex;
+    flex-direction: row;
   }
 
   .card {
     max-width: 250px;
+    min-width: 250px;
     text-align: unset;
     padding-bottom: 30px;
   }
@@ -213,7 +222,8 @@ body {
   .activity {
     padding-top: 45px;
     max-width: 250px;
-    margin: 25px;
+    min-width: 250px;
+    margin: 15px;
   }
 
   .activity-data {
@@ -241,5 +251,36 @@ body {
     font-size: 0.8rem;
     padding-top: 5px;
     padding-bottom: 5px;
+    align-self: flex-start;
+  }
+
+  .work {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .play {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .study {
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  .exercise {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  .social {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .selfcare {
+    grid-row: 2;
+    grid-column: 3;
   }
 }
