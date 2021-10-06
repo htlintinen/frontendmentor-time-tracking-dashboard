@@ -42,7 +42,7 @@ function createActivity(act) {
 
     let activityPrevDuration = document.createElement('div');
     activityPrevDuration.classList.add('activity-prev-duration');
-    let activityPrevDurationText = document.createTextNode(`Previous - ${formatTime(act.timeframes.daily.previous)}`);
+    let activityPrevDurationText = document.createTextNode(`${getPreviousTimeframeHeadline('daily')} - ${formatTime(act.timeframes.daily.previous)}`);
 
     activityDuration.appendChild(activityDurationText);
     activityPrevDuration.appendChild(activityPrevDurationText);
@@ -82,12 +82,25 @@ function setTimes(timeframe) {
         let times = getTimes(actLabel, timeframe);
         activity.querySelector('.activity-duration').innerHTML = formatTime(times.current);
         activity.querySelector('.activity-prev-duration').innerHTML = 
-            `Previous - ${formatTime(times.previous)}`;
+            `${getPreviousTimeframeHeadline(timeframe)} - ${formatTime(times.previous)}`;
     });
 };
 
 function formatTime(time) {
     // Format time with hr or hrs (1hr, everything else e.g. 7hrs, 0hrs)
     return `${time}hr${(time !== 1 ? 's' : '')}`
+}
+
+function getPreviousTimeframeHeadline(timeframe) {
+    switch (timeframe) {
+        case 'daily':
+            return 'Yesterday';
+        case 'weekly':
+            return 'Last week';
+        case 'monthly':
+            return 'Last month';
+        default:
+            return 'Previous';
+    }
 }
 
