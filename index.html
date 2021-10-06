@@ -12,6 +12,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js"></script>
 
     <title>Frontend Mentor | Time tracking dashboard</title>
 
@@ -42,9 +43,15 @@
         </div>
 
         <div class="time-container">
-          <div class="time">Daily</div>
-          <div class="time-active">Weekly</div>
-          <div class="time">Monthly</div>
+          <div id="daily" class="time time-active" onclick="setTimes('daily')">
+            Daily
+          </div>
+          <div id="weekly" class="time" onclick="setTimes('weekly')">
+            Weekly
+          </div>
+          <div id="monthly" class="time" onclick="setTimes('monthly')">
+            Monthly
+          </div>
         </div>
       </div>
       <div class="activity-container">
